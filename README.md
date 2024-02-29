@@ -48,4 +48,6 @@ The game's main loop handles question generation, answer validation, and session
 ## Contributions
 
 Contributions, bug reports, and feature requests are welcome! Feel free to fork the repository, make your changes, and submit a pull request.
-
+## Versions:
+ - **v.0-with GUI**
+ - **v.1=without GUI**
