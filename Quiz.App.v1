@@ -1,0 +1,91 @@
+import random
+
+# Your questions list
+questions = [
+    {"what is the capital of Germany?": "Berlin"},
+    {"what is the capital of Bulgaria?": "Sofia"},
+    {"what is the capital of France?": "Paris"},
+    {"what is the capital of Belgium?": "Brussels"},
+    {"what is the capital of United Arab Emirates?": "Abu Dhabi"},
+    {"what is the capital of Nigeria?": "Abuja"},
+    {"what is the capital of Ghana?": "Accra"},
+    {"what is the capital of Pitcairn Islands?": "Adamson"},
+    {"what is the capital of Ethiopia?": "Addis Ababa"},
+    {"what is the capital of Algeria?": "Algiers"},
+    {"what is the capital of Niue?": "Alofi"},
+    {"what is the capital of Jordan?": "Amman"},
+    {"what is the capital of Netherlands?": "Amsterdam"},
+    {"what is the capital of Andorra?": "Andorra la Vella"},
+    {"what is the capital of Turkey?": "Ankara"},
+    {"what is the capital of Madagascar?": "Antananarivo"},
+    {"what is the capital of Samoa?": "Apia"},
+    {"what is the capital of Turkmenistan?": "Ashgabat"},
+    {"what is the capital of Eritrea?": "Asmara"},
+    {"what is the capital of Kazakhstan?": "Astana"},
+    {"what is the capital of Paraguay?": "Asunción"},
+    {"what is the capital of Greece?": "Athens"},
+    {"what is the capital of Cook Islands?": "Avarua"},
+    {"what is the capital of Iraq?": "Baghdad"},
+    {"what is the capital of Azerbaijan?": "Baku"},
+    {"what is the capital of Mali?": "Bamako"},
+    {"what is the capital of Brunei?": "Bandar Seri Begawan"},
+    {"what is the capital of Thailand?": "Bangkok"},
+    {"what is the capital of Central African Republic?": "Bangui"},
+    {"what is the capital of Gambia?": "Banjul"},
+    {"what is the capital of Saint Kitts and Nevis?": "Basseterre"},
+    {"what is the capital of China?": "Beijing"},
+    {"what is the capital of Lebanon?": "Beirut"},
+    {"what is the capital of Serbia?": "Belgrade"},
+    {"what is the capital of Belize?": "Belmopan"},
+    {"what is the capital of Switzerland?": "Bern"},
+    {"what is the capital of Kyrgyzstan?": "Bishkek"},
+    {"what is the capital of Guinea-Bissau?": "Bissau"},
+    {"what is the capital of Colombia?": "Bogotá"},
+    {"what is the capital of Brazil?": "Brasília"},
+    {"what is the capital of Slovakia?": "Bratislava"},
+    {"what is the capital of Republic of the Congo?": "Brazzaville"},
+    {"what is the capital of Barbados?": "Bridgetown"},
+    {"what is the capital of Belgium?": "Brussels"},
+    {"what is the capital of Romania?": "Bucharest"},
+    {"what is the capital of Hungary?": "Budapest"},
+    {"what is the capital of Argentina?": "Buenos Aires"},
+    {"what is the capital of Burundi?": "Bujumbura"},
+    {"what is the capital of Egypt?": "Cairo"},
+    {"what is the capital of Australia?": "Canberra"},
+    {"what is the capital of Venezuela?": "Caracas"},
+    {"what is the capital of Saint Lucia?": "Castries"},
+    {"what is the capital of French Guiana?": "Cayenne"},
+    {"what is the capital of United States Virgin Islands?": "Charlotte Amalie"},
+    {"what is the capital of Moldova?": "Chisinau"},
+
+]
+
+questions_answered = 0
+
+while True:  # Loop indefinitely
+    # Select a random question from the list
+    random_question = random.choice(questions)
+
+    # Extract the question text and the correct answer
+    question = list(random_question.keys())[0]  # Question text
+    correct_answer = random_question[question]  # Correct answer
+
+    # Ask the user for their answer
+    print(question)  # Print the question to the user
+    user_answer = input("Your answer: ").strip().upper()
+
+    # Check if the user's answer is correct
+    if user_answer == correct_answer:
+        print("Correct!")
+    else:
+        print(f"Wrong. The correct answer is {correct_answer}.")
+
+    questions_answered += 1
+
+    # Check if it's time to ask to continue after every 6 questions
+    if questions_answered % 3 == 0:
+        response = input("Do you want to continue? (yes/no): ")
+        if response.lower() != "yes":
+            break  # Exit the loop if the user doesn't want to continue
+
+print("Thank you for participating!")
